@@ -202,9 +202,6 @@ if($_GET["pro"]=="ubah"){
 
 <br />
 Data Peserta: 
-| <a href="peserta/pdf.php"><img src='ypathicon/pdf.png' alt='PDF'></a> 
-| <a href="peserta/xml.php"><img src='ypathicon/xml.png' alt='XML'></a> 
-| <a href="peserta/xls.php"><img src='ypathicon/xls.png' alt='XLS'></a> 
 | <img src='ypathicon/print.png' alt='PRINT' OnClick="PRINT()"> |
 <br>
 

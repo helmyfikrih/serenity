@@ -676,6 +676,7 @@ date_default_timezone_set("Asia/Jakarta");
 
 
       displayRoute(awal, ahir, directionsService, directionsRenderer);
+      $("#right-panel").append  (`<a href="javascript:;" onclick="return window.history.back();"><input name="Batal" class="btn btn-info" type="button" id="Batal" value="Kembali" /></a>`)
     }
 
     function displayRoute(origin, destination, service, display) {

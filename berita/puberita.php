@@ -1,59 +1,59 @@
 <?php
-$cid_user=$_SESSION["cid"];
-$cstatus=$_SESSION["cstatus"];
-$ckategori=$_SESSION["ckategori"];
+$cid_user = $_SESSION["cid"];
+$cstatus = $_SESSION["cstatus"];
+$ckategori = $_SESSION["ckategori"];
 ?>
 
 <div class="row">
-    <div class="span8">       
-	
-		<?php  
-			$sql="select * from `$tbberita` where kategori='$ckategori' order by `id_berita` desc";							
-			$arr=getData($conn,$sql);
-			foreach($arr as $d){						
-				$id_berita=$d["id_berita"];
-				$nama_berita=$d["nama_berita"];
-				$deskripsi=$d["deskripsi"];
-				$gambar=$d["gambar"];
-				$gambar0=$d["gambar"];
-				$status=$d["status"];
-				$keterangan=$d["keterangan"];
-				$tanggal=WKT($d["tanggal"]);
-				$jam=$d["jam"];
-				$kategori=$d["kategori"];
+	<div class="span12">
+
+		<?php
+		$sql = "select * from `$tbberita` where kategori='$ckategori' order by `id_berita` desc";
+		$arr = getData($conn, $sql);
+		foreach ($arr as $d) {
+			$id_berita = $d["id_berita"];
+			$nama_berita = $d["nama_berita"];
+			$deskripsi = $d["deskripsi"];
+			$gambar = $d["gambar"];
+			$gambar0 = $d["gambar"];
+			$status = $d["status"];
+			$keterangan = $d["keterangan"];
+			$tanggal = WKT($d["tanggal"]);
+			$jam = $d["jam"];
+			$kategori = $d["kategori"];
 		?>
-				<!-- start article 1 -->
-				<article class="blog-post">
-					<div class="post-heading">
-						<h3><a href="#"><?php echo $nama_berita;?> </a></h3>
-					</div>
-					<div class="row">
-						<div class="span3">
-							<div class="post-image">
-								<a href="#"><img src="ypathfile/<?php echo $gambar;?>" /></a>
-							</div>
-						</div>
-						<div class="span5">
-							<ul class="post-meta">
-							  <li class="first"><i class="icon-calendar"></i><?php echo $tanggal;?></li>
-							  <li><i class="icon-list-alt"></i><?php echo $jam;?></li>
-							  <li class="last"><i class="icon-tags"></i><span><a href="#"><?php echo $kategori;?></a></span></li>
-							</ul>
-							<div class="clearfix">
-							</div>
-							<p>
-							  <?php echo $deskripsi;?>
-							</p>
-							<a href="index.php?mnu=puberitadetail&kd=<?php echo $id_berita;?>">
-								<button class="btn" type="button">Read more</button>
-							</a>
+			<!-- start article 1 -->
+			<article class="blog-post">
+				<div class="post-heading">
+					<h3><a href="#"><?php echo $nama_berita; ?> </a></h3>
+				</div>
+				<div class="row">
+					<div class="span3">
+						<div class="post-image">
+							<a href="#"><img src="ypathfile/<?php echo $gambar; ?>" /></a>
 						</div>
 					</div>
-				</article>
-				<!-- end article 1 -->
-		<?php }?>     
-		  
-        <div class="pagination">
+					<div class="span9">
+						<ul class="post-meta">
+							<li class="first"><i class="icon-calendar"></i><?php echo $tanggal; ?></li>
+							<li><i class="icon-list-alt"></i><?php echo $jam; ?></li>
+							<li class="last"><i class="icon-tags"></i><span><a href="#"><?php echo $kategori; ?></a></span></li>
+						</ul>
+						<div class="clearfix">
+						</div>
+						<p>
+							<?php echo $deskripsi; ?>
+						</p>
+						<a href="index.php?mnu=puberitadetail&kd=<?php echo $id_berita; ?>">
+							<button class="btn" type="button">Read more</button>
+						</a>
+					</div>
+				</div>
+			</article>
+			<!-- end article 1 -->
+		<?php } ?>
+
+		<!-- <div class="pagination">
             <ul>
 				<li><a href="#">Prev</a></li>
 				<li><a href="#">1</a></li>
@@ -62,10 +62,10 @@ $ckategori=$_SESSION["ckategori"];
 				<li><a href="#">4</a></li>
 				<li><a href="#">Next</a></li>
             </ul>
-        </div>
-    </div>
-        
-	<div class="span4">
+        </div> -->
+	</div>
+
+	<!-- <div class="span4">
         <aside>
             <div class="widget">
 				<form class="form-search">
@@ -123,5 +123,5 @@ $ckategori=$_SESSION["ckategori"];
 				</ul>
             </div>
         </aside>
-    </div>
+    </div> -->
 </div>

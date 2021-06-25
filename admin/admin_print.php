@@ -1,89 +1,108 @@
-<style type="text/css">body {width: 100%;} </style> 
-<body OnLoad="window.print()" OnFocus="window.close()"> 
-<?php
-include "../konmysqli.php";
-echo"<link href='../ypathcss/$css' rel='stylesheet' type='text/css' />";
-?>
+<style type="text/css">
+	body {
+		width: 100%;
+	}
+</style>
+
+<body OnLoad="window.print()" OnFocus="window.close()">
+	<?php
+	include "../konmysqli.php";
+	echo "<link href='../ypathcss/$css' rel='stylesheet' type='text/css' />";
+	?>
 
 
-<h3><center>Laporan data admin:</h3>
- 
+	<h3>
+		<center>Laporan data admin:
+	</h3>
 
-<table width="100%" border="0">
-  <tr>
-    <th width="5%"><center>no</td>
-    <th width="10%"><center>kode_admin</td>
-    <th width="10%"><center>nama_admin</td>
-    <th width="25%"><center>username</td>
-    <th width="25%"><center>password</td>
-    <th width="20%"><center>telepon</td>
-    <th width="10%"><center>email</td>
-    <th width="5%"><center>status</td>
-  </tr>
-<?php  
-$kode_admin=$_GET["kode"];
-  $sql="select * from `$tbadmin` where derewew order by `kode_admin` desc";
-  $jum=getJum($conn,$sql);
-  $no=0;
-		if($jum > 0){
-	$arr=getData($conn,$sql);
-		foreach($arr as $d) {								
-		$no++;
-				$kode_admin=$d["kode_admin"];
-				$nama_admin=$d["nama_admin"];
-				$username=$d["username"];
-				$password=$d["password"];
-				$telepon=$d["telepon"];
-				$email=$d["email"];
-				$status=$d["status"];
-						
-if($no %2==1){
-echo"<tr bgcolor='#999999'>
-				<td>$no</td>
-				<td>$kode_admin</td>
-				<td>$nama_admin</td>
-				<td>$username</td>
-				<td>$password</td>
-				<td>$telepon</td>
-				<td>$email</td>
-				<td>$status</td>
-				</tr>";
-				}//no==1
-else if($no %2==0){
-echo"<tr bgcolor='#cccccc'>
-				<td>$no</td>
-				<td>$kode_admin</td>
-				<td>$nama_admin</td>
-				<td>$username</td>
-				<td>$password</td>
-				<td>$telepon</td>
-				<td>$email</td>
-				<td>$status</td>
-				</tr>";
+
+	<table width="100%" border="0">
+		<tr>
+			<th width="5%">
+				<center>no</td>
+			<th width="10%">
+				<center>Id Peserta</td>
+			<th width="10%">
+				<center>Nama Peserta</td>
+			<th width="45%">
+				<center>Detail Seminar</td>
+			<th width="10%">
+				<center>Waktu Mendaftar</td>
+			<th width="10%">
+				<center>Keterangan</td>
+			<th width="10%">
+				<center>Status</td>
+		</tr>
+		<?php
+		$kode_admin = isset($_GET["kode"]) ? $_GET["kode"] : null;
+		$sql = "select p.id_peserta,t.nama_tenant,s.*,p.tanggal as tgl_daftar, p.jam as jam_daftar, p.keterangan, p.status from tb_peserta p 
+		left join tb_tenant t ON t.id_tenant= p.id_tenant
+		LEFT JOIN tb_seminar s ON s.id_seminar=p.id_seminar
+		ORDER by id_peserta asc";
+		$jum = getJum($conn, $sql);
+		$no = 0;
+		if ($jum > 0) {
+			$arr = getData($conn, $sql);
+			foreach ($arr as $d) {
+				$no++;
+				$id_peserta = $d["id_peserta"];
+				$nama_peserta = $d["nama_tenant"];
+				$detail_seminar = " Judul: " . $d["nama_seminar"] . "</br>" .
+					" Kategori: " . $d["kategori"] . "</br>" .
+					" Tanggal: " . $d["tanggal"] . "</br>" .
+					" Jam: " . $d["jam"] . "</br>";
+				$waktu_daftar = $d["tgl_daftar"] . ' ' . $d['jam_daftar'];
+				$keterangan = $d["keterangan"];
+				$status = $d["status"];
+
+				if ($no % 2 == 1) {
+					echo "<tr bgcolor='#999999'>
+					<td>$no</td>
+					<td>$id_peserta</td>
+					<td>$nama_peserta</td>
+					<td>$detail_seminar</td>
+					<td>$waktu_daftar</td>
+					<td>$keterangan</td>
+					<td>$status</td>
+					</tr>";
+				} //no==1
+				else if ($no % 2 == 0) {
+					echo "<tr bgcolor='#cccccc'>
+					<td>$no</td>
+					<td>$id_peserta</td>
+					<td>$nama_peserta</td>
+					<td>$detail_seminar</td>
+					<td>$waktu_daftar</td>
+					<td>$keterangan</td>
+					<td>$status</td>
+					</tr>";
 				}
-			}//while
-		}//if
-		else{echo"<tr><td colspan='7'><blink>Maaf, Data admin belum tersedia...</blink></td></tr>";}
-		
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+			} //while
+		} //if
+		else {
+			echo "<tr><td colspan='7'><blink>Maaf, Data admin belum tersedia...</blink></td></tr>";
+		}
 
-function getJum($conn,$sql){
-  $rs=$conn->query($sql);
-  $jum= $rs->num_rows;
-	$rs->free();
-	return $jum;
-}
+		/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-function getData($conn,$sql){
-	$rs=$conn->query($sql);
-	$rs->data_seek(0);
-	$arr = $rs->fetch_all(MYSQLI_ASSOC);
-	
-	$rs->free();
-	return $arr;
-}
-		
-?>
+		function getJum($conn, $sql)
+		{
+			$rs = $conn->query($sql);
+			$jum = $rs->num_rows;
+			$rs->free();
+			return $jum;
+		}
 
-</table>
+		function getData($conn, $sql)
+		{
+			$rs = $conn->query($sql);
+			$rs->data_seek(0);
+			$arr = $rs->fetch_all(MYSQLI_ASSOC);
 
+			$rs->free();
+			return $arr;
+		}
+
+		?>
+
+	</table>

@@ -25,7 +25,7 @@ $status="Daftar";
 
 <script type="text/javascript"> 
 function PRINT(){ 
-win=window.open('peserta/print.php','win','width=1000, height=400, menubar=0, scrollbars=1, resizable=0, location=0, toolbar=0, status=0'); } 
+win=window.open('admin/admin_print.php','win','width=1000, height=400, menubar=0, scrollbars=1, resizable=0, location=0, toolbar=0, status=0'); } 
 </script>
 <script language="JavaScript">
 function buka(url) {window.open(url, 'window_baru', 'width=800,height=600,left=320,top=100,resizable=1,scrollbars=1');}
@@ -100,9 +100,6 @@ if($_GET["pro"]=="ubah"){
 
 <br />
 Data Peserta: 
-| <a href="peserta/pdf.php"><img src='ypathicon/pdf.png' alt='PDF'></a> 
-| <a href="peserta/xml.php"><img src='ypathicon/xml.png' alt='XML'></a> 
-| <a href="peserta/xls.php"><img src='ypathicon/xls.png' alt='XLS'></a> 
 | <img src='ypathicon/print.png' alt='PRINT' OnClick="PRINT()"> |
 <br>
 

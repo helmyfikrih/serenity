@@ -132,6 +132,9 @@ date_default_timezone_set("Asia/Jakarta");
                   <li <?php if ($mnu == "peta") {
                         echo "class='active'";
                       } ?>><a href='index.php?mnu=peta'><i class="icon-flag"></i>Peta</a></li>
+                  <li <?php if ($mnu == "abuser") {
+                        echo "class='active'";
+                      } ?>><a href='index.php?mnu=abuser'><i class="icon-star"></i>Profil</a></li>
                   <li <?php if ($mnu == "logout") {
                         echo "class='active'";
                       } ?>><a href='index.php?mnu=logout'><i class="icon-off"></i>Logout</a></li>
@@ -495,25 +498,14 @@ date_default_timezone_set("Asia/Jakarta");
       <div class="row">
         <div class="span4">
           <div class="widget">
-            <h5>Browse pages</h5>
+            <!-- <h5>Browse pages</h5>
             <ul class="regular">
               <li><a href="#">Work for us</a></li>
               <li><a href="#">Creative process</a></li>
               <li><a href="#">Case study</a></li>
               <li><a href="#">Scaffold awwards</a></li>
               <li><a href="#">Meet the team</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-            <h5>Recent blog posts</h5>
-            <ul class="regular">
-              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-              <li><a href="#">Mea malis nominavi insolens ut</a></li>
-              <li><a href="#">Minim timeam has no aperiri sanctus ei mea per pertinax</a></li>
-              <li><a href="#">Te malorum dignissim eos quod sensibus</a></li>
-            </ul>
+            </ul> -->
           </div>
         </div>
         <div class="span4">
@@ -529,6 +521,17 @@ date_default_timezone_set("Asia/Jakarta");
               San Francisco, CA 94107<br>
               <abbr title="Phone">P:</abbr> (123) 456-7890
             </address>
+            <!-- <h5>Recent blog posts</h5>
+            <ul class="regular">
+              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+              <li><a href="#">Mea malis nominavi insolens ut</a></li>
+              <li><a href="#">Minim timeam has no aperiri sanctus ei mea per pertinax</a></li>
+              <li><a href="#">Te malorum dignissim eos quod sensibus</a></li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="span4">
+          <div class="widget">
           </div>
         </div>
       </div>
