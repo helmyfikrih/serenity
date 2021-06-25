@@ -498,6 +498,17 @@ date_default_timezone_set("Asia/Jakarta");
       <div class="row">
         <div class="span4">
           <div class="widget">
+            <!-- logo -->
+            <a class="brand logo" href="index.html">
+              <img src="assets/img/logo-dark.png" alt="">
+            </a>
+            <!-- end logo -->
+            <address>
+              <strong>Dinas Koperasi, UKM, Perdagangan dan Perindustrian Kota Sukabumi</strong><br>
+              Jl. Surya Kencana No.78, Selabatu, Kec. Cikole<br>
+              Kota Sukabumi, Jawa Barat 43115<br>
+              <abbr title="Phone">No. Tlp:</abbr> +62266222407
+            </address>
             <!-- <h5>Browse pages</h5>
             <ul class="regular">
               <li><a href="#">Work for us</a></li>
@@ -510,17 +521,7 @@ date_default_timezone_set("Asia/Jakarta");
         </div>
         <div class="span4">
           <div class="widget">
-            <!-- logo -->
-            <a class="brand logo" href="index.html">
-              <img src="assets/img/logo-dark.png" alt="">
-            </a>
-            <!-- end logo -->
-            <address>
-              <strong>Registered Companyname, Inc.</strong><br>
-              8895 Somename Ave, Suite 600<br>
-              San Francisco, CA 94107<br>
-              <abbr title="Phone">P:</abbr> (123) 456-7890
-            </address>
+
             <!-- <h5>Recent blog posts</h5>
             <ul class="regular">
               <li><a href="#">Lorem ipsum dolor sit amet</a></li>
