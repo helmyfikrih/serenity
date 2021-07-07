@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Jakarta");
 
 <head>
   <meta charset="utf-8">
-  <title>Serenity - Modern bootstrap website template</title>
+  <title>Diskopdagrin Kota Sukabumi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -57,7 +57,7 @@ date_default_timezone_set("Asia/Jakarta");
       <div class="navbar-inner">
         <div class="container">
           <!-- logo -->
-          <a class="brand logo" href="#"><img src="assets/img/logo.png" alt=""></a>
+          <a class="brand logo" href="#"><img src="assets/img/logo-diskopdagrin.png" alt=""></a>
           <!-- end logo -->
           <!-- top menu -->
           <div class="navigation">
@@ -167,7 +167,7 @@ date_default_timezone_set("Asia/Jakarta");
                   <li <?php if ($mnu == "logout") {
                         echo "class='active'";
                       } ?>><a href='index.php?mnu=logout'><i class="icon-off"></i>Logout</a></li>
-                <?php } elseif ($_SESSION["cstatus"] == "Pengguna") { // Pelaku Usaha 
+                <?php } elseif ($_SESSION["cstatus"] == "Pelaku Usaha") { // Pelaku Usaha 
                 ?>
                   <li <?php if ($mnu == "home") {
                         echo "class='active'";
@@ -249,18 +249,18 @@ date_default_timezone_set("Asia/Jakarta");
                     <!-- Layer 1 -->
                     <li>
                       <div class="info animate-in">
-                        <h2><?php echo $_SESSION["cstatus"];
-                            echo $_SESSION["ckategori"]; ?></h2>
+                        <h2>Selamat Datang</h2>
                         <br>
-                        <h3>Corporate business</h3>
+                        <h3><?php echo $_SESSION["cstatus"]; ?></h3>
                         <p>
-                          Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
+                          Selamat Datang di Website Resmi Dinas Koperas, UKM, Perdagangan dan Perindustrian Kota Sukabumi<br>
+                          (Diskopdagrin Kota Sukabumi)
                         </p>
-                        <a class="btn btn-success" href="#">Learn more &raquo;</a>
+                        <!-- <a class="btn btn-success" href="#">Learn more &raquo;</a> -->
                       </div>
-                      <img class="slider_img animate-in" src="assets/img/slides/sequence/img-1.png" alt="">
+                      <img class="slider_img animate-in" src="assets/img/foto-diskopdagrin.jpg" alt="">
                     </li>
-                    <!-- Layer 2 -->
+                    <!-- Layer 2 
                     <li>
                       <div class="info">
                         <h2>Smart and fresh</h2>
@@ -272,8 +272,8 @@ date_default_timezone_set("Asia/Jakarta");
                         <a class="btn btn-success" href="#">Learn more &raquo;</a>
                       </div>
                       <img class="slider_img" src="assets/img/slides/sequence/img-2.png" alt="">
-                    </li>
-                    <!-- Layer 3 -->
+                    </li> -->
+                    <!-- Layer 3 
                     <li>
                       <div class="info">
                         <h2>Far from ugly</h2>
@@ -285,7 +285,7 @@ date_default_timezone_set("Asia/Jakarta");
                         <a class="btn btn-success" href="#">Learn more &raquo;</a>
                       </div>
                       <img class="slider_img" src="assets/img/slides/sequence/img-3.png" alt="">
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
               </div>
@@ -305,19 +305,19 @@ date_default_timezone_set("Asia/Jakarta");
             <div class="span12">
               <div class="centered">
                 <?php if ($mnu == "user") {
-                  $tittle = "FORM USER";
+                  $tittle = "MENU USER";
                 } elseif ($mnu == "tenant" || $mnu == "abtenant") {
-                  $tittle = "DATA PELAKU USAHA";
+                  $tittle = "MENU PELAKU USAHA";
                 } elseif ($mnu == "berita" || $mnu == "abberita") {
-                  $tittle = "FORM BERITA";
+                  $tittle = "MENU BERITA";
                 } elseif ($mnu == "seminar" || $mnu == "abseminar") {
-                  $tittle = "FORM KEGIATAN";
+                  $tittle = "MENU KEGIATAN";
                 } elseif ($mnu == "peserta" || $mnu == "abpeserta") {
-                  $tittle = "DATA PESERTA";
+                  $tittle = "MENU PESERTA";
                 } elseif ($mnu == "gallery") {
-                  $tittle = "FORM GALERI PRODUK";
+                  $tittle = "MENU GALERI PRODUK";
                 } elseif ($mnu == "abgallery") {
-                  $tittle = "DATA GALERI PRODUK";
+                  $tittle = "MENU GALERI PRODUK";
                 } elseif ($mnu == "login") {
                   $tittle = "FORM LOGIN";
                 } elseif ($mnu == "putenant") {
@@ -340,6 +340,8 @@ date_default_timezone_set("Asia/Jakarta");
                   $tittle = "Tentang Kami";
                 } elseif ($mnu == "peta") {
                   $tittle = "Peta";
+                } elseif ($mnu == "daftar") {
+                  $tittle = "Buat Akun";
                 } elseif ($mnu == "direction") {
                   $tittle = "Direction";
                 }
@@ -359,8 +361,10 @@ date_default_timezone_set("Asia/Jakarta");
                   $desc = "Silahkan melakukan pendaftaran kegiatan dengan klik tombol daftar, anda harus login lebih dulu!!!";
                 } elseif ($mnu == "abuser") {
                   $desc = "Pada menu ini, anda dapat mengubah password atau mengubah data diri anda";
+                } elseif ($mnu == "daftar") {
+                  $desc = "Silahkan mengisi form di bawah ini";
                 } elseif ($mnu == "abgallery") {
-                  $desc = "Pada menu ini, anda dapat mengubah ataupun menghapus data produk";
+                  $desc = "Pada menu ini, anda dapat menghapus data produk";
                 } elseif ($mnu == "pugallery") {
                   $desc = "Pada menu ini, anda dapat menambahkan data produk atau foto pada data usaha anda";
                 } elseif ($mnu == "gugallery" || $mnu == "galeridetail") {
@@ -499,15 +503,15 @@ date_default_timezone_set("Asia/Jakarta");
         <div class="span4">
           <div class="widget">
             <!-- logo -->
-            <a class="brand logo" href="index.html">
-              <img src="assets/img/logo-dark.png" alt="">
+            <a class="brand logo" href="index.php?mnu=home#">
+              <img src="assets/img/logo-diskopdagrin-dark.png" alt="">
             </a>
             <!-- end logo -->
             <address>
               <strong>Dinas Koperasi, UKM, Perdagangan dan Perindustrian Kota Sukabumi</strong><br>
               Jl. Surya Kencana No.78, Selabatu, Kec. Cikole<br>
               Kota Sukabumi, Jawa Barat 43115<br>
-              <abbr title="Phone">No. Tlp:</abbr> +62266222407
+              <abbr title="Phone">No. Tlp:</abbr> +62266 222407
             </address>
             <!-- <h5>Browse pages</h5>
             <ul class="regular">
@@ -542,7 +546,7 @@ date_default_timezone_set("Asia/Jakarta");
         <div class="row">
           <div class="span6">
             <p>
-              &copy; Serenity - All right reserved
+              &copy; Diskopdagrin Kota Sukabumi - All right reserved
             </p>
           </div>
           <div class="span6">
@@ -553,7 +557,7 @@ date_default_timezone_set("Asia/Jakarta");
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by <a href="https://www.facebook.com/ardi.seftiansyah.1">Ardi Seftiansyah</a>
             </div>
           </div>
         </div>

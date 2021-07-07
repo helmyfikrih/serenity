@@ -194,10 +194,6 @@ echo "<a href='#' onclick='buka(\"admin/zoom.php?id=$kode_admin\")'>
 
 		<br />
 		Data Gallery:
-		| <a href="gallery/pdf.php"><img src='ypathicon/pdf.png' alt='PDF'></a>
-		| <a href="gallery/xml.php"><img src='ypathicon/xml.png' alt='XML'></a>
-		| <a href="gallery/xls.php"><img src='ypathicon/xls.png' alt='XLS'></a>
-		| <img src='ypathicon/print.png' alt='PRINT' OnClick="PRINT()"> |
 		<br>
 
 		<table class="table table-bordered table-striped">
@@ -243,7 +239,7 @@ echo "<a href='#' onclick='buka(\"admin/zoom.php?id=$kode_admin\")'>
 						$gambar0 = $d["gambar"];
 						$status = $d["status"];
 						$keterangan = $d["keterangan"];
-						
+
 						echo "<tr>
 				<td>$no</td>
 				
@@ -263,7 +259,6 @@ echo "<a href='#' onclick='buka(\"admin/zoom.php?id=$kode_admin\")'>
 				<td>$status</td>
 				
 				<td><div align='center'>
-<a href='?mnu=abgallery&pro=ubah&kode=$id_gallery'><i class='icon-pencil'></i></a>
 <a href='?mnu=abgallery&pro=hapus&kode=$id_gallery'><i class='icon-trash' alt='hapus' 
 onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_gallery pada data gallery ?..\")'></i> </a></div></td>
 				</tr>";

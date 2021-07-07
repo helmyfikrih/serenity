@@ -88,7 +88,7 @@ $keterangan = $d["keterangan"];
 		<tr>
 			<td height="24"><label for="password">Input Password Baru</label>
 			<td>:
-			<td><input name="password2" type="text" id="password" value="<?php echo $password; ?>" size="25" />
+			<td><input name="password2" type="text" id="password" value="<?php echo $password; ?>" size="25" required />
 			</td>
 		</tr>
 
@@ -101,7 +101,7 @@ $keterangan = $d["keterangan"];
 		<tr>
 			<td>
 			<td>
-			<td colspan="2"><input name="Simpan" type="submit" id="Simpan" class="btn btn-primary" value="Ubah Password" />
+			<td colspan="2"><input onclick="return confirm('Apakah anda sudah yakin?')" name="Simpan" type="submit" id="Simpan" class="btn btn-primary" value="Ubah Password" />
 				<input name="pro" type="hidden" id="pro" value="<?php echo $pro; ?>" />
 				<input name="id_user" type="hidden" id="id_user" value="<?php echo $id_user; ?>" />
 				<input name="id_user0" type="hidden" id="id_user0" value="<?php echo $id_user0; ?>" />
@@ -126,7 +126,7 @@ if (isset($_POST["Simpan"])) {
 	if ($jums > 0) {
 		$ada = 1;
 	} else {
-		echo "<script>alert('Password 1 Salah');document.location.href='?mnu=gantipasswordab';</script>";
+		echo "<script>alert('Password Lama Salah');document.location.href='?mnu=gantipasswordab';</script>";
 	}
 
 	//sama
@@ -137,7 +137,7 @@ if (isset($_POST["Simpan"])) {
 
 		$sama = 1;
 	} else {
-		echo "<script>alert('Password 3 tidaksesuai');document.location.href='?mnu=gantipasswordab';</script>";
+		echo "<script>alert('Konfirmasi Password Baru Tidak Sesuai');document.location.href='?mnu=gantipasswordab';</script>";
 	}
 
 	if ($ada > 0 && $sama > 0) {

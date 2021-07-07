@@ -14,7 +14,7 @@ session_start();
 						<li><label><strong>Password : </strong></label>
 							<input type="password" name="pass" class="form-control" id="name" placeholder="Password" data-rule="minlen:4" </li>
 						<li><button class="btn btn-color btn-rounded" name="Login" type="submit">Login</button>
-							<button class="btn btn-color btn-rounded" type="submit">Daftar</button>
+							<a href="?mnu=daftar" class="btn btn-color btn-rounded" type="submit">Daftar</a>
 
 						</li>
 					</ul>
@@ -33,7 +33,7 @@ session_start();
 		</aside>
 	</div>
 	<div class="span8">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.2450221396114!2d106.93324581605835!3d-6.914106429270895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e684835051c1c5d%3A0xd1c2f28063401332!2sPemerintah%20Kota%20Sukabumi%20Dinas%20Koperasi%2C%20Usaha%20Kecil%20Dan%20Menengah%20Perdagangan%20Dan%20Perindustrian!5e0!3m2!1sen!2sid!4v1624613660523!5m2!1sen!2sid" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 		<div class="spacer30"></div>
 
@@ -56,7 +56,7 @@ session_start();
 			if ($kategori == "Admin Bidang Koperasi dan UKM" || $kategori == "Admin Bidang Perdagangan" || $kategori == "Admin Bidang Perindustrian") {
 				$st = "Administrator";
 			} elseif ($kategori == "Bidang Koperasi dan UKM" || $kategori == "Bidang Perdagangan" || $kategori == "Bidang Perindustrian") {
-				$st = "Pengguna";
+				$st = "Pelaku Usaha";
 			} else {
 				$st = "Super Admin";
 			}
@@ -65,7 +65,7 @@ session_start();
 			$_SESSION["ckategori"] = $kategori;
 			$_SESSION["cstatus"] = $st;
 
-			echo "<script>alert('Otentikasi " . $_SESSION["cstatus"] . " " . $_SESSION["cnama"] . " (" . $_SESSION["cid"] . ") berhasil Login!');
+			echo "<script>alert('Otentikasi " . $_SESSION["cstatus"] . " " . $_SESSION["cnama"] . " (" . $_SESSION["cid"] . ") Berhasil Login!');
 		document.location.href='index.php?mnu=home';</script>";
 		}
 		//elseif(getJum($conn,$sql2)>0){
@@ -73,7 +73,7 @@ session_start();
 		//	}
 		else {
 			session_destroy();
-			echo "<script>alert('Otentikasi Login GAGAL !,Silakan cek data Anda kembali...');
+			echo "<script>alert('Otentikasi Login GAGAL ! Silakan Cek Data Anda Kembali...');
 			document.location.href='index.php?mnu=login';</script>";
 		}
 	}

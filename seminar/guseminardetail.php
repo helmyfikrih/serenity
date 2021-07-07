@@ -69,7 +69,7 @@ $kategori = $d["kategori"];
 if (isset($_POST["Simpan"])) {
 
   if (!$_SESSION) {
-    echo "<script>alert('LOGIN DULU GAN')</script>";
+    echo "<script>alert('Harap Login Dahulu!')</script>";
     die;
   }
   $sql = "select `id_peserta` from `$tbpeserta` order by `id_peserta` desc";

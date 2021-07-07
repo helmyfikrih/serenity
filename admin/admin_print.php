@@ -12,7 +12,7 @@
 
 
 	<h3>
-		<center>Laporan data admin:
+		<center>Laporan Data Peserta:
 	</h3>
 
 
