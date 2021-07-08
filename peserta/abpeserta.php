@@ -31,7 +31,7 @@ $status = "Daftar";
 
 <script type="text/javascript">
 	function PRINT() {
-		win = window.open('peserta/print.php', 'win', 'width=1000, height=400, menubar=0, scrollbars=1, resizable=0, location=0, toolbar=0, status=0');
+		win = window.open('peserta/abprint<?php echo $ckategori ?>.php', 'win', 'width=1000, height=400, menubar=0, scrollbars=1, resizable=0, location=0, toolbar=0, status=0');
 	}
 </script>
 <script language="JavaScript">

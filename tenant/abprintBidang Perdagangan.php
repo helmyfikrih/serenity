@@ -10,9 +10,8 @@
 	echo "<link href='../ypathcss/$css' rel='stylesheet' type='text/css' />";
 	?>
 
-
 	<h3>
-		<center>Laporan Data Pelaku Usaha:
+		<center>Laporan Data Pelaku Usaha Bidang Perdagangan:
 	</h3>
 
 
@@ -37,6 +36,7 @@
 		$kode_admin = isset($_GET["kode"]) ? $_GET["kode"] : null;
 		$sql = "SELECT t.nama_user,p.* FROM tb_tenant p 
 		LEFT JOIN tb_user t ON t.id_user= p.id_user
+		WHERE p.kategori='Bidang Perdagangan'
 		ORDER BY kategori,id_tenant ASC";
 		$jum = getJum($conn, $sql);
 		$no = 0;
