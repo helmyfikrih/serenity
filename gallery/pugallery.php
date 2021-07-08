@@ -158,7 +158,7 @@ if ($_GET["pro"] == "ubah") {
 					<td height="24"><label for="gambar">Gambar Produk</label>
 					<td>:
 					<td colspan="2">
-						<input name="gambar" type="file" id="gambar" class="btn" size="20" required />
+						<input name="gambar" type="file" id="gambar" class="btn" size="20" />
 						=> <a href='#' onclick='buka("admin/zoom.php?id=<?php echo $kode_admin; ?>")'><?php echo $gambar0; ?></a>
 					</td>
 				</tr>
@@ -267,14 +267,14 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=pugallery&pro=ubah&kode=$id_gallery'><i class='icon-pencil'></i></a>
 <a href='?mnu=pugallery&pro=hapus&kode=$id_gallery'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_gallery pada data gallery ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Produk $nama_gallery?\")'></i> </a></div></td>
 				</tr>";
 
 						$no++;
 					} //while
 				} //if
 				else {
-					echo "<tr><td colspan='6'><blink>Maaf, Data gallery belum tersedia...</blink></td></tr>";
+					echo "<tr><td colspan='6'><blink>Maaf, Data Produk Belum Tersedia...</blink></td></tr>";
 				}
 				?>
 
@@ -370,9 +370,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('Data $id_gallery berhasil disimpan !');document.location.href='?mnu=pugallery';</script>";
+			echo "<script>alert('Produk $nama_gallery Berhasil Disimpan!');document.location.href='?mnu=pugallery';</script>";
 		} else {
-			echo "<script>alert('Data $id_gallery gagal disimpan...');document.location.href='?mnu=pugallery';</script>";
+			echo "<script>alert('Produk $nama_gallery Gagal Disimpan!');document.location.href='?mnu=pugallery';</script>";
 		}
 	} else {
 		$sql = "update `$tbgallery` set 
@@ -386,9 +386,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_gallery`='$id_gallery0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data $id_gallery berhasil diubah !');document.location.href='?mnu=pugallery';</script>";
+			echo "<script>alert('Produk $nama_gallery Berhasil Diubah!');document.location.href='?mnu=pugallery';</script>";
 		} else {
-			echo "<script>alert('Data $id_gallery gagal diubah...');document.location.href='?mnu=pugallery';</script>";
+			echo "<script>alert('Produk $nama_gallery Gagal Diubah!');document.location.href='?mnu=pugallery';</script>";
 		}
 	} //else simpan
 }
@@ -400,9 +400,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbgallery` where `id_gallery`='$id_gallery'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_gallery berhasil dihapus !');document.location.href='?mnu=pugallery';</script>";
+		echo "<script>alert('Produk $id_gallery Berhasil Dihapus!');document.location.href='?mnu=pugallery';</script>";
 	} else {
-		echo "<script>alert('Data $id_gallery gagal dihapus...');document.location.href='?mnu=pugallery';</script>";
+		echo "<script>alert('Produk $id_gallery Gagal Dihapus!');document.location.href='?mnu=pugallery';</script>";
 	}
 }
 ?>

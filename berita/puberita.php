@@ -8,7 +8,7 @@ $ckategori = $_SESSION["ckategori"];
 	<div class="span12">
 
 		<?php
-		$sql = "select * from `$tbberita` where kategori='$ckategori' order by `id_berita` desc";
+		$sql = "select * from `$tbberita` where kategori='$ckategori' order by `tanggal` desc";
 		$arr = getData($conn, $sql);
 		foreach ($arr as $d) {
 			$id_berita = $d["id_berita"];

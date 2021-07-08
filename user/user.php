@@ -301,14 +301,14 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=user&pro=ubah&kode=$id_user'><i class='icon-pencil'></i></a>
 <a href='?mnu=user&pro=hapus&kode=$id_user'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_user pada data user ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Data User $nama_user?\")'></i> </a></div></td>
 				</tr>";
 
 							$no++;
 						} //while
 					} //if
 					else {
-						echo "<tr><td colspan='6'><blink>Maaf, Data user belum tersedia...</blink></td></tr>";
+						echo "<tr><td colspan='6'><blink>Maaf, Data User Belum Tersedia...</blink></td></tr>";
 					}
 					?>
 
@@ -396,9 +396,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('Data $id_user berhasil disimpan !');document.location.href='?mnu=user';</script>";
+			echo "<script>alert('Data User $nama_user Berhasil Disimpan!');document.location.href='?mnu=user';</script>";
 		} else {
-			echo "<script>alert('Data $id_user gagal disimpan...');document.location.href='?mnu=user';</script>";
+			echo "<script>alert('Data User $nama_user Gagal Disimpan!');document.location.href='?mnu=user';</script>";
 		}
 	} else {
 		$sql = "update `$tbuser` set 
@@ -414,9 +414,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_user`='$id_user0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data $id_user berhasil diubah !');document.location.href='?mnu=user';</script>";
+			echo "<script>alert('Data User $nama_user Berhasil Diubah!');document.location.href='?mnu=user';</script>";
 		} else {
-			echo "<script>alert('Data $id_user gagal diubah...');document.location.href='?mnu=user';</script>";
+			echo "<script>alert('Data User $nama_user Gagal Diubah!');document.location.href='?mnu=user';</script>";
 		}
 	} //else simpan
 }
@@ -428,9 +428,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbuser` where `id_user`='$id_user'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_user berhasil dihapus !');document.location.href='?mnu=user';</script>";
+		echo "<script>alert('Data User $id_user Berhasil Dihapus!');document.location.href='?mnu=user';</script>";
 	} else {
-		echo "<script>alert('Data $id_user gagal dihapus...');document.location.href='?mnu=user';</script>";
+		echo "<script>alert('Data User $id_user Gagal Dihapus!');document.location.href='?mnu=user';</script>";
 	}
 }
 ?>

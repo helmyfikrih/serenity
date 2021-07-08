@@ -13,7 +13,7 @@ $ckategori = $_SESSION["ckategori"];
 
 
     <?php
-    $sql = "select * from `$tbseminar` where kategori='$ckategori' order by `id_seminar` desc";
+    $sql = "select * from `$tbseminar` where kategori='$ckategori' order by `tanggal` desc";
     $arr = getData($conn, $sql);
     foreach ($arr as $d) {
       $id_seminar = $d["id_seminar"];

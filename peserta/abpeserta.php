@@ -312,7 +312,7 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=abpeserta&pro=ubah&kode=$id_peserta'><i class='icon-pencil'></i></a>
 <a href='?mnu=abpeserta&pro=hapus&kode=$id_peserta'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_peserta pada data peserta ?..\")'></i></a></div></td>
+onClick='return confirm(\"Anda Yakin Akan Menghapus Data Peserta $id_peserta?\")'></i></a></div></td>
 				</tr>";
 
 							$no++;
@@ -400,9 +400,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('$nama_tenant berhasil didaftarkan !');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('$id_tenant Berhasil Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
 		} else {
-			echo "<script>alert('$nama_tenant gagal didaftarkan...');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('$id_tenant Gagal Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
 		}
 	} else {
 		$sql = "update `$tbpeserta` set 
@@ -416,9 +416,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_peserta`='$id_peserta0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data Peserta $nama_tenant berhasil diubah !');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('Data Peserta $id_tenant Berhasil Diubah!');document.location.href='?mnu=abpeserta';</script>";
 		} else {
-			echo "<script>alert('Data Peserta $nama_tenant gagal diubah...');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('Data Peserta $id_tenant Gagal Diubah!');document.location.href='?mnu=abpeserta';</script>";
 		}
 	} //else simpan
 }
@@ -430,9 +430,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbpeserta` where `id_peserta`='$id_peserta'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data Peserta $nama_tenant berhasil dihapus !');document.location.href='?mnu=abpeserta';</script>";
+		echo "<script>alert('Data Peserta $id_tenant Berhasil Dihapus!');document.location.href='?mnu=abpeserta';</script>";
 	} else {
-		echo "<script>alert('Data Peserta $nama_tenant gagal dihapus...');document.location.href='?mnu=abpeserta';</script>";
+		echo "<script>alert('Data Peserta $id_tenant Gagal Dihapus!');document.location.href='?mnu=abpeserta';</script>";
 	}
 }
 ?>

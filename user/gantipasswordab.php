@@ -105,7 +105,7 @@ $keterangan = $d["keterangan"];
 				<input name="pro" type="hidden" id="pro" value="<?php echo $pro; ?>" />
 				<input name="id_user" type="hidden" id="id_user" value="<?php echo $id_user; ?>" />
 				<input name="id_user0" type="hidden" id="id_user0" value="<?php echo $id_user0; ?>" />
-				<a href="javascript:;" onclick="return window.history.back();"><input name="Batal" class="btn btn-danger" type="button" id="Batal" value="Batal" /></a>
+				<a href="?mnu=abuser" onclick="return window.history.back();"><input name="Batal" class="btn btn-danger" type="button" id="Batal" value="Batal" /></a>
 			</td>
 		</tr>
 	</table>
@@ -143,7 +143,7 @@ if (isset($_POST["Simpan"])) {
 	if ($ada > 0 && $sama > 0) {
 		$sql = "update `$tbuser` set `password`='$password2' where `id_user`='$id_user'";
 		$ubah = process($conn, $sql);
-		echo "<script>alert('Berhasil Ubah Password !');document.location.href='?mnu=abuser';</script>";
+		echo "<script>alert('Berhasil Ubah Password!');document.location.href='?mnu=abuser';</script>";
 	} else {
 		//echo"<script>alert('Password 1 Salah');document.location.href='?mnu=gantipassword';</script>";		
 	}

@@ -143,7 +143,7 @@ if (isset($_POST["Simpan"])) {
 	if ($ada > 0 && $sama > 0) {
 		$sql = "update `$tbuser` set `password`='$password2' where `id_user`='$id_user'";
 		$ubah = process($conn, $sql);
-		echo "<script>alert('Berhasil Ubah Password !');document.location.href='?mnu=putenant';</script>";
+		echo "<script>alert('Berhasil Ubah Password!');document.location.href='?mnu=putenant';</script>";
 	} else {
 		//echo"<script>alert('Password 1 Salah');document.location.href='?mnu=gantipassword';</script>";		
 	}

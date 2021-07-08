@@ -260,14 +260,14 @@ echo "<a href='#' onclick='buka(\"admin/zoom.php?id=$kode_admin\")'>
 				
 				<td><div align='center'>
 <a href='?mnu=abgallery&pro=hapus&kode=$id_gallery'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_gallery pada data gallery ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Produk $nama_gallery?\")'></i> </a></div></td>
 				</tr>";
 
 						$no++;
 					} //while
 				} //if
 				else {
-					echo "<tr><td colspan='6'><blink>Maaf, Data gallery belum tersedia...</blink></td></tr>";
+					echo "<tr><td colspan='6'><blink>Maaf, Data Produk Belum Tersedia...</blink></td></tr>";
 				}
 				?>
 
@@ -388,9 +388,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbgallery` where `id_gallery`='$id_gallery'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_gallery berhasil dihapus !');document.location.href='?mnu=abgallery';</script>";
+		echo "<script>alert('Produk $id_gallery Berhasil Dihapus!');document.location.href='?mnu=abgallery';</script>";
 	} else {
-		echo "<script>alert('Data $id_gallery gagal dihapus...');document.location.href='?mnu=abgallery';</script>";
+		echo "<script>alert('Produk $id_gallery Gagal Dihapus!');document.location.href='?mnu=abgallery';</script>";
 	}
 }
 ?>

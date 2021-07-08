@@ -429,7 +429,7 @@ if ($_GET["pro"] == "ubah") {
 	$sqlq = "select distinct(kategori) from `$tbtenant` where kategori='$ckategori' order by `id_tenant` desc";
 	$jumq = getJum($conn, $sqlq);
 	if ($jumq < 1) {
-		echo "<h1>Maaf data belum tersedia...</h1>";
+		echo "<h1>Maaf Data Belum Tersedia...</h1>";
 	}
 	$arrq = getData($conn, $sqlq);
 	foreach ($arrq as $dq) {
@@ -527,14 +527,14 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=abtenant&pro=ubah&kode=$id_tenant'><i class='icon-pencil'></i></a>
 <a href='?mnu=abtenant&pro=hapus&kode=$id_tenant'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_tenant pada data tenant ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Data $nama_tenant?\")'></i> </a></div></td>
 				</tr>";
 
 							$no++;
 						} //while
 					} //if
 					else {
-						echo "<tr><td colspan='6'><blink>Maaf, Data tenant belum tersedia...</blink></td></tr>";
+						echo "<tr><td colspan='6'><blink>Maaf, Data Pelaku Usaha Belum Tersedia...</blink></td></tr>";
 					}
 					?>
 
@@ -655,9 +655,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('Data $id_tenant berhasil disimpan !');document.location.href='?mnu=abtenant';</script>";
+			echo "<script>alert('Data $nama_tenant Berhasil Disimpan!');document.location.href='?mnu=abtenant';</script>";
 		} else {
-			echo "<script>alert('Data $id_tenant gagal disimpan...');document.location.href='?mnu=abtenant';</script>";
+			echo "<script>alert('Data $nama_tenant Gagal Disimpan!');document.location.href='?mnu=abtenant';</script>";
 		}
 	} else {
 		$sql = "update `$tbtenant` set 
@@ -681,9 +681,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_tenant`='$id_tenant0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data $id_tenant berhasil diubah !');document.location.href='?mnu=abtenant';</script>";
+			echo "<script>alert('Data $nama_tenant Berhasil Diubah!');document.location.href='?mnu=abtenant';</script>";
 		} else {
-			echo "<script>alert('Data $id_tenant gagal diubah...');document.location.href='?mnu=abtenant';</script>";
+			echo "<script>alert('Data $nama_tenant Gagal Diubah!');document.location.href='?mnu=abtenant';</script>";
 		}
 	} //else simpan
 }
@@ -695,9 +695,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbtenant` where `id_tenant`='$id_tenant'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_tenant berhasil dihapus !');document.location.href='?mnu=abtenant';</script>";
+		echo "<script>alert('Data $id_tenant Berhasil Dihapus!');document.location.href='?mnu=abtenant';</script>";
 	} else {
-		echo "<script>alert('Data $id_tenant gagal dihapus...');document.location.href='?mnu=abtenant';</script>";
+		echo "<script>alert('Data $id_tenant Gagal Dihapus!');document.location.href='?mnu=abtenant';</script>";
 	}
 }
 ?>

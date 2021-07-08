@@ -291,14 +291,14 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=abberita&pro=ubah&kode=$id_berita'><i class='icon-pencil'></i></a>
 <a href='?mnu=abberita&pro=hapus&kode=$id_berita'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_berita pada data berita ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Berita $id_berita?\")'></i> </a></div></td>
 				</tr>";
 
 						$no++;
 					} //while
 				} //if
 				else {
-					echo "<tr><td colspan='6'><blink>Maaf, Data berita belum tersedia...</blink></td></tr>";
+					echo "<tr><td colspan='6'><blink>Maaf, Data Berita Belum Tersedia...</blink></td></tr>";
 				}
 				?>
 
@@ -396,9 +396,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('Data $id_berita berhasil disimpan !');document.location.href='?mnu=abberita';</script>";
+			echo "<script>alert('Berita $id_berita Berhasil Disimpan!');document.location.href='?mnu=abberita';</script>";
 		} else {
-			echo "<script>alert('Data $id_berita gagal disimpan...');document.location.href='?mnu=abberita';</script>";
+			echo "<script>alert('Berita $id_berita Gagal Disimpan!');document.location.href='?mnu=abberita';</script>";
 		}
 	} else {
 		$sql = "update `$tbberita` set 
@@ -414,9 +414,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_berita`='$id_berita0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data $id_berita berhasil diubah !');document.location.href='?mnu=abberita';</script>";
+			echo "<script>alert('Berita $id_berita Berhasil Diubah!');document.location.href='?mnu=abberita';</script>";
 		} else {
-			echo "<script>alert('Data $id_berita gagal diubah...');document.location.href='?mnu=abberita';</script>";
+			echo "<script>alert('Berita $id_berita Gagal Diubah!');document.location.href='?mnu=abberita';</script>";
 		}
 	} //else simpan
 }
@@ -428,9 +428,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbberita` where `id_berita`='$id_berita'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_berita berhasil dihapus !');document.location.href='?mnu=abberita';</script>";
+		echo "<script>alert('Berita $id_berita Berhasil Dihapus!');document.location.href='?mnu=abberita';</script>";
 	} else {
-		echo "<script>alert('Data $id_berita gagal dihapus...');document.location.href='?mnu=abberita';</script>";
+		echo "<script>alert('Berita $id_berita Gagal Dihapus!');document.location.href='?mnu=abberita';</script>";
 	}
 }
 ?>

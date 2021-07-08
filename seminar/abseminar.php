@@ -292,14 +292,14 @@ if ($_GET["pro"] == "ubah") {
 				<td><div align='center'>
 <a href='?mnu=abseminar&pro=ubah&kode=$id_seminar'><i class='icon-pencil'></i></a>
 <a href='?mnu=abseminar&pro=hapus&kode=$id_seminar'><i class='icon-trash' alt='hapus' 
-onClick='return confirm(\"Apakah Anda benar-benar akan menghapus $nama_seminar pada data seminar ?..\")'></i> </a></div></td>
+onClick='return confirm(\"Apakah Anda Yakin Akan Menghapus Kegiatan $nama_seminar?\")'></i> </a></div></td>
 				</tr>";
 
 						$no++;
 					} //while
 				} //if
 				else {
-					echo "<tr><td colspan='6'><blink>Maaf, Data seminar belum tersedia...</blink></td></tr>";
+					echo "<tr><td colspan='6'><blink>Maaf, Data Kegiatan Belum Tersedia...</blink></td></tr>";
 				}
 				?>
 
@@ -397,9 +397,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('Data $id_seminar berhasil disimpan !');document.location.href='?mnu=abseminar';</script>";
+			echo "<script>alert('Kegiatan $nama_seminar Berhasil Disimpan!');document.location.href='?mnu=abseminar';</script>";
 		} else {
-			echo "<script>alert('Data $id_seminar gagal disimpan...');document.location.href='?mnu=abseminar';</script>";
+			echo "<script>alert('Kegiatan $nama_seminar Gagal Disimpan!');document.location.href='?mnu=abseminar';</script>";
 		}
 	} else {
 		$sql = "update `$tbseminar` set 
@@ -415,9 +415,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_seminar`='$id_seminar0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data $id_seminar berhasil diubah !');document.location.href='?mnu=abseminar';</script>";
+			echo "<script>alert('Kegiatan $nama_seminar Berhasil Diubah!');document.location.href='?mnu=abseminar';</script>";
 		} else {
-			echo "<script>alert('Data $id_seminar gagal diubah...');document.location.href='?mnu=abseminar';</script>";
+			echo "<script>alert('Kegiatan $nama_seminar Gagal Diubah!');document.location.href='?mnu=abseminar';</script>";
 		}
 	} //else simpan
 }
@@ -429,9 +429,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbseminar` where `id_seminar`='$id_seminar'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data $id_seminar berhasil dihapus !');document.location.href='?mnu=abseminar';</script>";
+		echo "<script>alert('Kegiatan $id_seminar Berhasil Dihapus!');document.location.href='?mnu=abseminar';</script>";
 	} else {
-		echo "<script>alert('Data $id_seminar gagal dihapus...');document.location.href='?mnu=abseminar';</script>";
+		echo "<script>alert('Kegiatan $id_seminar Gagal Dihapus!');document.location.href='?mnu=abseminar';</script>";
 	}
 }
 ?>
