@@ -24,7 +24,7 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-    var image = 'http://localhost/Serenity/ypathicon/home2.png';
+    var image = 'http://localhost/diskopdagrin/ypathicon/home2.png';
     var location0 = new google.maps.LatLng(lat1, lon1);
     var marker0 = new google.maps.Marker({
       position: location0,
@@ -123,7 +123,7 @@
 
     for (var i = 0; i < n; i++) {
       var location = new google.maps.LatLng(arLat[i], arLon[i]);
-      var image2 = 'http://localhost/Serenity/ypathicon/location.png';
+      var image2 = 'http://localhost/diskopdagrin/ypathicon/location.png';
       var marker = new google.maps.Marker({
         position: location,
         map: map,

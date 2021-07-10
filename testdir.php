@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Jakarta");
 
 <head>
   <meta charset="utf-8">
-  <title>Serenity - Modern bootstrap website template</title>
+  <title>Diskopdagrin Kota Sukabumi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -59,7 +59,7 @@ date_default_timezone_set("Asia/Jakarta");
       <div class="navbar-inner">
         <div class="container">
           <!-- logo -->
-          <a class="brand logo" href="#"><img src="assets/img/logo.png" alt=""></a>
+          <a class="brand logo" href="#"><img src="assets/img/logo-diskopdagrin.png" alt=""></a>
           <!-- end logo -->
           <!-- top menu -->
           <div class="navigation">
@@ -545,39 +545,16 @@ date_default_timezone_set("Asia/Jakarta");
       <div class="row">
         <div class="span4">
           <div class="widget">
-            <h5>Browse pages</h5>
-            <ul class="regular">
-              <li><a href="#">Work for us</a></li>
-              <li><a href="#">Creative process</a></li>
-              <li><a href="#">Case study</a></li>
-              <li><a href="#">Scaffold awwards</a></li>
-              <li><a href="#">Meet the team</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-            <h5>Recent blog posts</h5>
-            <ul class="regular">
-              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-              <li><a href="#">Mea malis nominavi insolens ut</a></li>
-              <li><a href="#">Minim timeam has no aperiri sanctus ei mea per pertinax</a></li>
-              <li><a href="#">Te malorum dignissim eos quod sensibus</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
             <!-- logo -->
             <a class="brand logo" href="index.html">
-              <img src="assets/img/logo-dark.png" alt="">
+              <img src="assets/img/logo-diskopdagrin-dark.png" alt="">
             </a>
             <!-- end logo -->
             <address>
-              <strong>Registered Companyname, Inc.</strong><br>
-              8895 Somename Ave, Suite 600<br>
-              San Francisco, CA 94107<br>
-              <abbr title="Phone">P:</abbr> (123) 456-7890
+              <strong>Dinas Koperasi, UKM, Perdagangan dan Perindustrian Kota Sukabumi</strong><br>
+              Jl. Surya Kencana No.78, Selabatu, Kec. Cikole<br>
+              Kota Sukabumi, Jawa Barat 43115<br>
+              <abbr title="Phone">No. Tlp:</abbr> +62266 222407
             </address>
           </div>
         </div>
@@ -588,7 +565,7 @@ date_default_timezone_set("Asia/Jakarta");
         <div class="row">
           <div class="span6">
             <p>
-              &copy; Serenity - All right reserved
+              &copy; Diskopdagrin Kota Sukabumi - All right reserved
             </p>
           </div>
           <div class="span6">
@@ -599,7 +576,7 @@ date_default_timezone_set("Asia/Jakarta");
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
               -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by <a href="https://www.facebook.com/ardi.seftiansyah.1">Ardi Seftiansyah</a>
             </div>
           </div>
         </div>
@@ -676,7 +653,7 @@ date_default_timezone_set("Asia/Jakarta");
 
 
       displayRoute(awal, ahir, directionsService, directionsRenderer);
-      $("#right-panel").append  (`<a href="javascript:;" onclick="return window.history.back();"><input name="Batal" class="btn btn-info" type="button" id="Batal" value="Kembali" /></a>`)
+      $("#right-panel").append(`<a href="index.php?mnu=peta" onclick="return window.history.back();"><input name="Batal" class="btn btn-info" type="button" id="Batal" value="Kembali" /></a>`)
     }
 
     function displayRoute(origin, destination, service, display) {

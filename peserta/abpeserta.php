@@ -400,9 +400,9 @@ if (isset($_POST["Simpan"])) {
 
 		$simpan = process($conn, $sql);
 		if ($simpan) {
-			echo "<script>alert('$id_tenant Berhasil Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('$id_peserta Berhasil Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
 		} else {
-			echo "<script>alert('$id_tenant Gagal Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('$id_peserta Gagal Didaftarkan!');document.location.href='?mnu=abpeserta';</script>";
 		}
 	} else {
 		$sql = "update `$tbpeserta` set 
@@ -416,9 +416,9 @@ if (isset($_POST["Simpan"])) {
 	where `id_peserta`='$id_peserta0'";
 		$ubah = process($conn, $sql);
 		if ($ubah) {
-			echo "<script>alert('Data Peserta $id_tenant Berhasil Diubah!');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('Data Peserta $id_peserta Berhasil Diubah!');document.location.href='?mnu=abpeserta';</script>";
 		} else {
-			echo "<script>alert('Data Peserta $id_tenant Gagal Diubah!');document.location.href='?mnu=abpeserta';</script>";
+			echo "<script>alert('Data Peserta $id_peserta Gagal Diubah!');document.location.href='?mnu=abpeserta';</script>";
 		}
 	} //else simpan
 }
@@ -430,9 +430,9 @@ if ($_GET["pro"] == "hapus") {
 	$sql = "delete from `$tbpeserta` where `id_peserta`='$id_peserta'";
 	$hapus = process($conn, $sql);
 	if ($hapus) {
-		echo "<script>alert('Data Peserta $id_tenant Berhasil Dihapus!');document.location.href='?mnu=abpeserta';</script>";
+		echo "<script>alert('Data Peserta $id_peserta Berhasil Dihapus!');document.location.href='?mnu=abpeserta';</script>";
 	} else {
-		echo "<script>alert('Data Peserta $id_tenant Gagal Dihapus!');document.location.href='?mnu=abpeserta';</script>";
+		echo "<script>alert('Data Peserta $id_peserta Gagal Dihapus!');document.location.href='?mnu=abpeserta';</script>";
 	}
 }
 ?>
