@@ -253,7 +253,7 @@ date_default_timezone_set("Asia/Jakarta");
                         <br>
                         <h3><?php echo $_SESSION["cstatus"]; ?></h3>
                         <p>
-                          Selamat Datang di Website Resmi Dinas Koperas, UKM, Perdagangan dan Perindustrian Kota Sukabumi<br>
+                          Selamat Datang di Website Resmi Dinas Koperasi, UKM, Perdagangan dan Perindustrian Kota Sukabumi<br>
                           (Diskopdagrin Kota Sukabumi)
                         </p>
                         <!-- <a class="btn btn-success" href="#">Learn more &raquo;</a> -->

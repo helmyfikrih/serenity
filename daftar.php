@@ -7,7 +7,7 @@ session_start();
     <aside>
       <div class="widget">
         <form method="post">
-          <h4>Login</h4>
+          <h4>Buat Akun</h4>
           <ul>
             <li><label><strong>Nama User : </strong></label>
               <input type="text" name="nama_user" class="form-control" id="nama_user" placeholder="Nama User" data-rule="minlen:4" required>
